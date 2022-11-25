@@ -1,0 +1,17 @@
+import "semantic-ui-css/semantic.min.css";
+import Product from "./components/Product";
+import ProductList from "./components/ProductList";
+
+function App() {
+  return (
+    <div className="main ui text container">
+      <h1 className="ui dividing centered header">Popular Products</h1>
+      <ProductList />
+      <div className="ui unstackable items">
+        <Product />
+      </div>
+    </div>
+  );
+}
+
+export default App;

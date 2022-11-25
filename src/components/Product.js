@@ -1,15 +1,12 @@
 import React from "react";
 
 const Product = (props) => {
-  console.log(props);
-  const {
-    title,
-    description,
-    url,
-    votes,
-    submitterAvatarUrl,
-    productImageUrl,
-  } = props;
+  const { id, title, description, votes, submitterAvatarUrl, productImageUrl } =
+    props;
+
+  const handleUpVote = () => {
+    props.onVote(id);
+  };
   return (
     <div className="item">
       <div className="image">
@@ -17,7 +14,7 @@ const Product = (props) => {
       </div>
       <div className="middle aligned content">
         <div className="header">
-          <a>
+          <a onClick={handleUpVote}>
             <i className="large caret up icon" />
           </a>
           {votes}

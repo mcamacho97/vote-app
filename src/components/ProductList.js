@@ -3,18 +3,20 @@ import Product from "./Product";
 import data from "../utils/Data";
 
 const ProductList = () => {
-  const products = data[0];
   return (
     <div className="ui unstackable items">
-      <Product
-        id={products.id}
-        title={products.title}
-        description={products.description}
-        url={products.url}
-        votes={products.votes}
-        submitterAvatarUrl={products.submitterAvatarUrl}
-        productImageUrl={products.productImageUrl}
-      />
+      {data.map((product) => (
+        <Product
+          key={`product-${product.id}`}
+          id={product.id}
+          title={product.title}
+          description={product.description}
+          url={product.url}
+          votes={product.votes}
+          submitterAvatarUrl={product.submitterAvatarUrl}
+          productImageUrl={product.productImageUrl}
+        />
+      ))}
     </div>
   );
 };
